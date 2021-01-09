@@ -1,0 +1,13 @@
+<swiper 
+    effect="fade" [spaceBetween]="50" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()"
+    [navigation]="true" [scrollbar]="{ draggable: true }"
+>
+    <ng-template swiperSlide *ngFor="let movie of movies">
+        <div class="movie-container" [ngStyle]="{'background-size': 'cover', 'background-image': 'url(https://image.tmdb.org/t/p/w500'+ movie.backdrop_path +')'}">
+        </div>
+        <div class="movie-description">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ movie.overview | slice:0:150 }}<span *ngIf="movie.overview.length > 150">...</span></p>
+        </div>
+    </ng-template>
+</swiper>

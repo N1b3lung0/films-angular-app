@@ -1,1 +1,9 @@
-<p>home works!</p>
+<div class="home-container">
+    <h1>Now Playing</h1>
+    
+    <app-slideshow [movies]="movies" *ngIf="movies.length > 0" ></app-slideshow>
+    
+    <h1>Movies</h1>
+    
+    <app-movies-poster-grid [movies]="movies" *ngIf="movies.length > 0" ></app-movies-poster-grid>
+</div>
